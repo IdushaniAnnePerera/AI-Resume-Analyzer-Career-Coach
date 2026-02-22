@@ -59,7 +59,7 @@ public class ResumeAnalysisService {
             suggestions.add("Add a dedicated Skills section and include: " + String.join(", ", missingSkills));
         }
 
-        if (!resumeText.matches("(?s).*(\\d+%|\\$\\d+|\\d+\+).*")) {
+        if (!resumeText.matches("(?s).*(?:\\d+%|\\$\\d+|\\d+\\+).*")) {
             suggestions.add("Quantify impact using numbers (%, $, time saved, users served) in each project/experience bullet.");
         }
 
