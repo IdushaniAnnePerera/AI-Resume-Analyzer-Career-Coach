@@ -2,17 +2,15 @@
 
 A complete full-stack project that helps users improve resumes for ATS systems and create stronger career positioning.
 
-## ✅ Features
+## Features
 - Upload resume in **PDF** and extract text automatically.
 - Analyze resume against a **job description**.
 - Get:
   - ATS score
   - Missing skills
   - Suggested improvements
-  - Improved bullet points
-  - LinkedIn headline suggestion
-- Uses a **free AI approach** (local rule-based NLP/keyword intelligence), so no paid API key is required.
-
+  - Improved bullet point
+- Uses a **free AI approach** (local rule-based NLP/keyword intelligence)
 ## Tech Stack
 - **Frontend:** React + Vite + Axios
 - **Backend:** Spring Boot 3 + Java 17 + PDFBox
@@ -56,7 +54,3 @@ Frontend runs at `http://localhost:5173`
 
 ---
 
-## LinkedIn Project Title (High Value)
-**Built an AI Resume Analyzer that improves ATS score, detects missing skills, and suggests career improvements using React + Spring Boot.**
-
-You can paste this in your LinkedIn Projects section.
