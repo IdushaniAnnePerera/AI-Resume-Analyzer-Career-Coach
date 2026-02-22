@@ -43,9 +43,8 @@ public class ResumeAnalysisService {
                 missingSkills,
                 suggestions,
                 improvedBullets,
-                linkedinTitle,
-                resumeText
-        );
+                improvedBullets, linkedinTitle,
+                resumeText);
     }
 
     private String normalize(String text) {
@@ -60,11 +59,13 @@ public class ResumeAnalysisService {
         }
 
         if (!resumeText.matches("(?s).*(?:\\d+%|\\$\\d+|\\d+\\+).*")) {
-            suggestions.add("Quantify impact using numbers (%, $, time saved, users served) in each project/experience bullet.");
+            suggestions.add(
+                    "Quantify impact using numbers (%, $, time saved, users served) in each project/experience bullet.");
         }
 
         if (atsScore < 70) {
-            suggestions.add("Mirror exact keywords from the job description in experience bullets to improve ATS keyword match.");
+            suggestions.add(
+                    "Mirror exact keywords from the job description in experience bullets to improve ATS keyword match.");
         }
 
         suggestions.add("Use the format: Action Verb + Task + Tech + Measurable Result for stronger bullets.");
@@ -87,17 +88,18 @@ public class ResumeAnalysisService {
             originalBullets.add("Collaborated with team members to improve application performance.");
         }
 
-        return originalBullets.stream().limit(4).map(b ->
-                "Improved " + b.replaceAll("\\.$", "") +
-                        " using tools aligned with job requirements, delivering measurable business impact."
-        ).toList();
+        return originalBullets.stream().limit(4).map(b -> "Improved " + b.replaceAll("\\.$", "") +
+                " using tools aligned with job requirements, delivering measurable business impact.").toList();
     }
 
     private String generateLinkedinTitle(String jd, int atsScore) {
         String role = "Software Engineer";
-        if (jd.contains("data")) role = "Data Analyst";
-        if (jd.contains("machine learning") || jd.contains("ai")) role = "AI Engineer";
-        if (jd.contains("full stack")) role = "Full-Stack Developer";
+        if (jd.contains("data"))
+            role = "Data Analyst";
+        if (jd.contains("machine learning") || jd.contains("ai"))
+            role = "AI Engineer";
+        if (jd.contains("full stack"))
+            role = "Full-Stack Developer";
 
         return role + " | ATS-Optimized Resume Builder | Projects in React + Spring Boot | Score " + atsScore + "/100";
     }
