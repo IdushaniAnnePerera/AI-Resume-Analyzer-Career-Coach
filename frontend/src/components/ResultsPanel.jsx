@@ -21,10 +21,7 @@ export default function ResultsPanel({ result }) {
         <ul>{result.improvedBulletPoints.map((item, idx) => <li key={idx}>{item}</li>)}</ul>
       </section>
 
-      <section>
-        <h3>LinkedIn Title Suggestion</h3>
-        <p>{result.linkedinTitle}</p>
-      </section>
+
     </div>
   )
 }
